@@ -116,3 +116,6 @@ flowchart TD
   class A actor
   class B,C,D,E process
   class F decision
+
+### 📝 Mermaid BPMN Explanation  
+The BPMN Mermaid diagram illustrates the complete decision-making workflow used during the case assignment process in the law firm. The process begins when an admin staff member inputs the lawyer ID and case ID. The PL/SQL system immediately validates whether both the lawyer and the case exist in the database. Once confirmed, the system retrieves all previous hearing dates for that lawyer and checks for two critical conflicts: scheduling conflicts and opponent conflicts. A scheduling conflict occurs when the lawyer already has another case on the same hearing date, while an opponent conflict happens if the lawyer is already representing the opposing party in another case. The decision gateway evaluates whether any conflict exists. If a conflict is detected, the system blocks the assignment and returns a clear error message. If no conflict exists, the assignment is inserted into the LAWYER_CASE table, completing the process successfully. This BPMN flow clearly represents how MIS logic automates validations, enforces ethical compliance, and ensures accurate, conflict-free case allocation.
