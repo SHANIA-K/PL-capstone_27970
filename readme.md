@@ -121,16 +121,16 @@ flowchart TD
  # 📘 Phase II: Business Process Modeling (MIS)
 
 ### 🔍 Scope & Purpose
-This phase models the *case assignment workflow* for Moonlight Legal Agency.  
-It demonstrates how the MIS supports decision-making by automating:
+This phase models the *case assignment workflow* for the **LawyerFirm Case Conflict Checker System**.  
+The MIS supports safe, ethical, and accurate decision-making by automating:
 
-- Lawyer availability verification  
+- Lawyer existence validation  
 - Case existence validation  
-- Conflict of interest checks  
-- Schedule conflict detection  
-- Safe and ethical assignment of cases  
+- Hearing date conflict detection  
+- Opponent conflict-of-interest checks  
+- Controlled, transparent case assignment  
 
-The MIS reduces manual effort and ensures accurate, real-time decision-making.
+This ensures professionally compliant operations inside LawyerFirm.
 
 ---
 
@@ -138,49 +138,49 @@ The MIS reduces manual effort and ensures accurate, real-time decision-making.
 
 | Role                     | Responsibility                                                       |
 |--------------------------|-----------------------------------------------------------------------|
-| Admin Staff              | Inputs lawyer and case details to start the assignment process        |
-| Lawyer                   | Receives cases assigned to them                                      |
-| Case Manager             | Oversees assignment workflow                                          |
-| Conflict Checker System  | Validates scheduling and ethical conflicts                            |
-| Assignment System        | Records valid assignments into LAWYER_CASE                            |
+| Admin Staff              | Inputs lawyer_id and case_id to request assignment                    |
+| Lawyer                   | Receives assigned cases                                               |
+| Case Manager             | Oversees and manages the case assignment workflow                     |
+| Conflict Checker System  | Detects scheduling and ethical conflicts                              |
+| Assignment System        | Saves successful assignments into LAWYER_CASE                          |
 
 ---
 
 ### 🖼 Process Diagram
 
 ✅ *Tools Used:*  
-- **Mermaid** (Markdown-based diagram generation)  
-- **Draw.io** (Standard BPMN modeling)
+- **Mermaid** (Markdown-based diagrams)  
+- **Draw.io** (BPMN workflow modeling)
 
 #### 🔗 Mermaid Diagram  
-*(Insert screenshot if required)*  
-`./screenshots/Phase II/moonlight_phaseII.png`
+`./screenshots/Phase II/phaseII.png`
 
 ---
 
 #### 🧩 Draw.io BPMN Diagram  
-*(Insert exported Draw.io PNG/SVG)*  
-`./screenshots/Phase II/moonlight_phaseII.drawio.png`
+`./screenshots/Phase II/phaseII.drawio.png`
 
 ---
 
 ### 🧠 MIS Value & Flow Summary
-The workflow begins when **Admin Staff** attempts to assign a lawyer to a case.  
-The MIS executes automated validation in the following order:
+The workflow begins when **Admin Staff** requests to assign a lawyer to a case.  
+The MIS performs automatic validation through the following steps:
 
-1. **Verify existence** of lawyer and case  
-2. **Retrieve lawyer’s existing hearing dates**  
-3. **Check for scheduling conflicts** (double booking)  
-4. **Check for opponent conflicts** (ethical violation)  
-5. If any conflict is detected → **MIS blocks the assignment**  
-6. If no conflicts → **MIS saves the assignment** into `LAWYER_CASE`
+1. **Validates** that the lawyer exists  
+2. **Validates** that the case exists  
+3. **Retrieves** the lawyer’s existing hearing dates  
+4. **Checks for conflicts**, including:  
+   - Hearing date clash (double booking)  
+   - Opponent conflict (ethical conflict of interest)  
+5. If a conflict is found → Assignment is **blocked**, error returned  
+6. If no conflict is found → Assignment is **saved** into `LAWYER_CASE`
 
-This MIS improves Moonlight Legal Agency’s operations through:
-- Real-time decision-making  
-- Ethical compliance  
-- Reduced administrative workload  
-- Accurate validation  
-- Transparent and safe case allocation  
+This MIS process strengthens the LawyerFirm organization through:
+- Real-time conflict detection  
+- Ethically safe case management  
+- Reduction of manual administrative work  
+- Improved accuracy and transparency  
+- Faster case assignment workflow  
 
 ---
 
@@ -192,7 +192,7 @@ flowchart TD
 
   A1 --> A2["📁 Validate Entities\n• Check Lawyer Exists\n• Check Case Exists"]
 
-  A2 --> B1["📅 Retrieve Lawyer Schedule\nCheck Existing Hearing Dates"]
+  A2 --> B1["📅 Retrieve Lawyer Schedule\nLoad Existing Hearing Dates"]
 
   B1 --> C1["⚖ Conflict Check\n• Date Clash?\n• Opponent Conflict?"]
 
@@ -200,7 +200,7 @@ flowchart TD
 
   D1 -- Yes --> E1["❌ Return Error\nAssignment Blocked"]
 
-  D1 -- No --> F1["✅ Insert into LAWYER_CASE\nAssignment Confirmed"]
+  D1 -- No --> F1["✅ Insert into LAWYER_CASE\nAssignment Successful"]
 
   F1 --> finish([✔ Process End])
   E1 --> finish
@@ -216,7 +216,3 @@ flowchart TD
   class D1 decision
   class F1 success
   class E1 error
-
-
-
-
