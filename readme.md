@@ -117,5 +117,106 @@ flowchart TD
   class B,C,D,E process
   class F decision
 
-### 📝 Mermaid BPMN Explanation  
-The BPMN Mermaid diagram illustrates the complete decision-making workflow used during the case assignment process in the law firm. The process begins when an admin staff member inputs the lawyer ID and case ID. The PL/SQL system immediately validates whether both the lawyer and the case exist in the database. Once confirmed, the system retrieves all previous hearing dates for that lawyer and checks for two critical conflicts: scheduling conflicts and opponent conflicts. A scheduling conflict occurs when the lawyer already has another case on the same hearing date, while an opponent conflict happens if the lawyer is already representing the opposing party in another case. The decision gateway evaluates whether any conflict exists. If a conflict is detected, the system blocks the assignment and returns a clear error message. If no conflict exists, the assignment is inserted into the LAWYER_CASE table, completing the process successfully. This BPMN flow clearly represents how MIS logic automates validations, enforces ethical compliance, and ensures accurate, conflict-free case allocation.
+ ```
+ # 📘 Phase II: Business Process Modeling (MIS)
+
+### 🔍 Scope & Purpose
+This phase models the *case assignment workflow* for Moonlight Legal Agency.  
+It demonstrates how the MIS supports decision-making by automating:
+
+- Lawyer availability verification  
+- Case existence validation  
+- Conflict of interest checks  
+- Schedule conflict detection  
+- Safe and ethical assignment of cases  
+
+The MIS reduces manual effort and ensures accurate, real-time decision-making.
+
+---
+
+### 👥 Key Actors
+
+| Role                     | Responsibility                                                       |
+|--------------------------|-----------------------------------------------------------------------|
+| Admin Staff              | Inputs lawyer and case details to start the assignment process        |
+| Lawyer                   | Receives cases assigned to them                                      |
+| Case Manager             | Oversees assignment workflow                                          |
+| Conflict Checker System  | Validates scheduling and ethical conflicts                            |
+| Assignment System        | Records valid assignments into LAWYER_CASE                            |
+
+---
+
+### 🖼 Process Diagram
+
+✅ *Tools Used:*  
+- **Mermaid** (Markdown-based diagram generation)  
+- **Draw.io** (Standard BPMN modeling)
+
+#### 🔗 Mermaid Diagram  
+*(Insert screenshot if required)*  
+`./screenshots/Phase II/moonlight_phaseII.png`
+
+---
+
+#### 🧩 Draw.io BPMN Diagram  
+*(Insert exported Draw.io PNG/SVG)*  
+`./screenshots/Phase II/moonlight_phaseII.drawio.png`
+
+---
+
+### 🧠 MIS Value & Flow Summary
+The workflow begins when **Admin Staff** attempts to assign a lawyer to a case.  
+The MIS executes automated validation in the following order:
+
+1. **Verify existence** of lawyer and case  
+2. **Retrieve lawyer’s existing hearing dates**  
+3. **Check for scheduling conflicts** (double booking)  
+4. **Check for opponent conflicts** (ethical violation)  
+5. If any conflict is detected → **MIS blocks the assignment**  
+6. If no conflicts → **MIS saves the assignment** into `LAWYER_CASE`
+
+This MIS improves Moonlight Legal Agency’s operations through:
+- Real-time decision-making  
+- Ethical compliance  
+- Reduced administrative workload  
+- Accurate validation  
+- Transparent and safe case allocation  
+
+---
+
+### 💻 Mermaid Code Reference
+
+```mermaid
+flowchart TD
+  start([● Process Start]) --> A1["🧑‍💼 Admin Staff\nEnter Lawyer_ID & Case_ID"]
+
+  A1 --> A2["📁 Validate Entities\n• Check Lawyer Exists\n• Check Case Exists"]
+
+  A2 --> B1["📅 Retrieve Lawyer Schedule\nCheck Existing Hearing Dates"]
+
+  B1 --> C1["⚖ Conflict Check\n• Date Clash?\n• Opponent Conflict?"]
+
+  C1 --> D1{{"❓ Conflict Detected?"}}
+
+  D1 -- Yes --> E1["❌ Return Error\nAssignment Blocked"]
+
+  D1 -- No --> F1["✅ Insert into LAWYER_CASE\nAssignment Confirmed"]
+
+  F1 --> finish([✔ Process End])
+  E1 --> finish
+
+  classDef admin fill:#e3f2fd,stroke:#2196f3;
+  classDef process fill:#fff3e0,stroke:#fb8c00;
+  classDef decision fill:#fce4ec,stroke:#d81b60;
+  classDef success fill:#c8e6c9,stroke:#388e3c;
+  classDef error fill:#ffebee,stroke:#c62828;
+
+  class A1 admin
+  class A2,B1,C1 process
+  class D1 decision
+  class F1 success
+  class E1 error
+
+
+
+
