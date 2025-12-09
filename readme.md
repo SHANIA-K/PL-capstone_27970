@@ -326,7 +326,7 @@ SQL Developer is used as an alternative to OEM, offering full administrative con
 ---
 
 ## 📸 Screenshot: User Creation & Privilege Assignment
-👉 **[Click here to view screenshot](PUT_YOUR_USER_PRIVILEGE_SCREENSHOT_LINK_HERE)**
+👉 **[pdb.png](PUT_YOUR_USER_PRIVILEGE_SCREENSHOT_LINK_HERE)**
 
 ---
 
