@@ -426,3 +426,52 @@ Validation Query Screenshot:
 - The database is ready for **Phase VI PL/SQL development**
 
 ---
+
+# 🔧 Phase VI: PL/SQL Programming (Procedures, Functions, Cursors, Triggers, Packages)
+
+## 🎯 Objective
+To implement the core business logic of the **LawyerFirm Case Conflict Checker System** using PL/SQL.  
+This phase ensures accurate validation, automated conflict detection, ethical compliance, and reliable case assignment through procedures, functions, triggers, and packages.
+
+---
+
+# 🧱 Database Operations
+
+## 🔁 DML Operations
+INSERT, UPDATE, and DELETE statements were used to manipulate table data during testing.
+
+Examples:
+- Inserting new lawyers  
+- Modifying case hearing dates for conflict testing  
+- Deleting invalid case assignments  
+
+📄 **Screenshot:**  
+`./screenshots/Phase VI/dml_operations.png`
+
+---
+
+## 🧩 DDL Operations
+CREATE, ALTER, and DROP statements were used to build and adjust the physical schema.
+
+Examples:
+- Adding constraints to LAWYER_CASE  
+- Updating CASE_FILE structure during validation tests  
+- Enforcing foreign keys  
+
+📄 **Screenshot:**  
+`./screenshots/Phase VI/ddl_operations.png`
+
+---
+
+# 💡 Simple Analytics Problem Statement
+**“Analyze how many cases each lawyer has handled to understand workload distribution.”**
+
+This was implemented using a window function on the `LAWYER_CASE` table:
+
+```sql
+SELECT 
+    l.lawyer_id,
+    l.name AS lawyer_name,
+    COUNT(c.case_id) OVER (PARTITION BY l.lawyer_id) AS total_cases_assigned
+FROM LAWYER_CASE c
+JOIN LAWYER l ON c.lawyer_id = l.lawyer_id;
