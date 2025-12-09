@@ -153,12 +153,12 @@ This ensures professionally compliant operations inside LawyerFirm.
 - **Draw.io** (BPMN workflow modeling)
 
 #### 🔗 Mermaid Diagram  
-`./screenshots/Phase II/phaseII.png`
+`./screenshots/Phase II/mermaid.png`
 
 ---
 
 #### 🧩 Draw.io BPMN Diagram  
-`./screenshots/Phase II/phaseII.drawio.png`
+`./screenshots/Phase II/bpmn.png`
 
 ---
 
