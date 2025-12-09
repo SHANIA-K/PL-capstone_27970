@@ -278,10 +278,12 @@ The schema is optimized for conflict detection efficiency.
 # 🖼️ ERD Diagram (Logical Model)
 
 ## 📸 Screenshot: Logical ERD (From SQL Developer or Draw.io)
-👉 **[Click here to view ERD Screenshot](PUT_YOUR_ERD_SCREENSHOT_LINK_HERE)**
+👉 **[Click here to view ERD Screenshot](<img width="814" height="515" alt="erd" src="https://github.com/user-attachments/assets/84e65c04-492e-4105-ac31-255694f94585" />
+)**
 
 ## 📸 Screenshot: Table Relationship Overview
-👉 **[Click here to view Relationship Screenshot](PUT_YOUR_RELATIONSHIP_SCREENSHOT_LINK_HERE)**
+👉 **[Click here to view Relationship Screenshot](<img width="1400" height="1000" alt="relationship tables" src="https://github.com/user-attachments/assets/ecd247f0-1f38-4a98-b503-b027972e2389" />
+)**
 
 ---
 
@@ -391,7 +393,8 @@ Realistic sample data was inserted into each table to simulate real law firm ope
 Lawyers with various specialties were added.
 
 📄 **Screenshot:**  
-`./screenshots/Phase V/lawyer_inserts.png`<img width="438" height="417" alt="TABLE LAWYER" src="https://github.com/user-attachments/assets/7b8674d4-afcc-4c25-b1fc-ba431b0a6203" />
+`./screenshots/Phase V/lawyer_inserts.png`<img width="438" height="417" alt="TABLE LAWYER" src="https://github.com/user-attachments/assets/7b8674d4-afcc-4c25-b1fc-ba431b0a6203" /><img width="431" height="104" alt="image" src="https://github.com/user-attachments/assets/12f58e6a-c42d-4647-a31c-ee777dc66284" />
+
 
 
 ---
@@ -400,7 +403,8 @@ Lawyers with various specialties were added.
 Sample court cases were inserted with client names, opponents, and hearing dates.
 
 📄 **Screenshot:**  
-`./screenshots/Phase V/casefile_inserts.png`
+`./screenshots/Phase V/casefile_inserts.png`<img width="601" height="79" alt="image" src="https://github.com/user-attachments/assets/4c1715cd-55bf-4675-b073-c3e7f0b682b8" />
+
 
 ---
 
