@@ -259,24 +259,28 @@ The logical model for the Law Firm Case Conflict Checker system was developed to
 
 - **LAWYER → LAWYER_CASE** : One lawyer can be assigned many cases  
 - **CASE_FILE → LAWYER_CASE** : Each case is assigned to one lawyer  
-- **LAWYER_CASE** ensures a controlled, validated linking between lawyers and cases  
-- Foreign keys enforce legal, ethical, and scheduling integrity  
+- **LAWYER_CASE** ensures a validated and controlled link between lawyers and cases  
+- Foreign keys enforce consistency and prevent invalid assignments  
 
 ---
 
 # 📐 Normalization (3NF Verification)
 
-### ✔ 1NF – Attributes contain only atomic values  
-### ✔ 2NF – All non-key attributes fully depend on the primary key  
+### ✔ 1NF – All data fields store atomic values  
+### ✔ 2NF – Every non-key attribute fully depends on the key  
 ### ✔ 3NF – No transitive dependencies exist  
 
-This ensures a clean and efficient schema for the conflict checker.
+The schema is optimized for conflict detection efficiency.
 
 ---
 
-# 🖼️ ERD Diagram  
-*Visual Placeholder — Logical ERD*  
-This ERD represents the LAWYER, CASE_FILE, and LAWYER_CASE tables, including primary keys, foreign keys, and relationship types. It forms the foundation for conflict checking in later PL/SQL development.
+# 🖼️ ERD Diagram (Logical Model)
+
+## 📸 Screenshot: Logical ERD (From SQL Developer or Draw.io)
+👉 **[Click here to view ERD Screenshot](PUT_YOUR_ERD_SCREENSHOT_LINK_HERE)**
+
+## 📸 Screenshot: Table Relationship Overview
+👉 **[Click here to view Relationship Screenshot](PUT_YOUR_RELATIONSHIP_SCREENSHOT_LINK_HERE)**
 
 ---
 
@@ -295,13 +299,13 @@ CREATE TABLE LAWYER (
 # 🏗️ Phase IV: Database Creation and Access Setup (via SQL Developer)
 
 ## 🎯 Objective
-To create a dedicated Oracle PL/SQL development environment for the Law Firm Case Conflict Checker system using SQL Developer as the primary database administration tool. This phase ensures that a secure Pluggable Database (PDB), user account, and the required access privileges are configured for all subsequent phases, including table creation, PL/SQL procedure development, and trigger implementation.
+To create a dedicated Oracle PL/SQL development environment for the Law Firm Case Conflict Checker system using SQL Developer. This setup prepares the PDB, user account, and all necessary access privileges required for implementation of tables, PL/SQL procedures, and triggers.
 
 ---
 
 ## 🔐 Task 1: PDB and User Creation (Using SQL Developer)
-The project environment was fully set up inside an Oracle Pluggable Database (PDB) using SQL Developer.  
-SQL Developer provides an easy-to-use administrative interface and works as an alternative to Oracle Enterprise Manager (OEM) while offering full control over PDBs, users, and permissions.
+The development environment was created inside an Oracle Pluggable Database (PDB) using SQL Developer.  
+SQL Developer is used as an alternative to OEM, offering full administrative control for this project.
 
 ---
 
@@ -312,17 +316,17 @@ SQL Developer provides an easy-to-use administrative interface and works as an a
 | PDB Name           | mon_27970_isaro_LawFirm_db                      |
 | User Created       | isaro27970                                       |
 | Password           | isaro                                            |
-| Privileges Granted | Full DBA privileges (development environment)    |
+| Privileges Granted | Full DBA privileges                              |
 
 ---
 
 ## 📸 Screenshot: PDB Creation in SQL Developer
-*PDB Creation Screenshot Placeholder*
+👉 **[Click here to view screenshot](PUT_YOUR_PDB_SCREENSHOT_LINK_HERE)**
 
 ---
 
 ## 📸 Screenshot: User Creation & Privilege Assignment
-*User & Privileges Screenshot Placeholder*
+👉 **[Click here to view screenshot](PUT_YOUR_USER_PRIVILEGE_SCREENSHOT_LINK_HERE)**
 
 ---
 
