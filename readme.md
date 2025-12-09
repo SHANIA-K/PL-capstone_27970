@@ -342,3 +342,87 @@ CREATE USER isaro27970 IDENTIFIED BY isaro;
 -- Grant full privileges for development
 GRANT ALL PRIVILEGES TO isaro27970;
 GRANT SYSDBA TO isaro27970;
+
+```
+# 📘 Phase V: Table Implementation and Data Insertion
+
+## 🎯 Objective
+To implement the physical Oracle database structure for the **LawyerFirm Case Conflict Checker System** and populate it with meaningful, testable data.  
+This phase ensures data integrity, correct foreign key relationships, and realistic case–lawyer assignments that support future PL/SQL logic.
+
+---
+
+## 🔨 Step 1: Table Creation
+The following tables were created in the schema **LAWYERFIRM_DB** using Oracle SQL Developer.
+
+### 🧱 Table: LAWYER
+A table to store lawyer information including specialties.
+
+📄 **Screenshot:**  
+`./screenshots/Phase V/lawyer_table.png`
+
+---
+
+### 🧱 Table: CASE_FILE
+A table that stores details of legal cases, including client, opponent, and hearing date.
+
+📄 **Screenshot:**  
+`./screenshots/Phase V/casefile_table.png`
+
+---
+
+### 🧱 Table: LAWYER_CASE
+A junction table linking lawyers to their assigned cases.
+
+📄 **Screenshot:**  
+`./screenshots/Phase V/lawyercase_table.png`
+
+---
+
+## 📥 Step 2: Data Insertion
+Realistic sample data was inserted into each table to simulate real law firm operations.
+
+### 🗃️ Insertion: LAWYER
+Lawyers with various specialties were added.
+
+📄 **Screenshot:**  
+`./screenshots/Phase V/lawyer_inserts.png`
+
+---
+
+### 🗃️ Insertion: CASE_FILE
+Sample court cases were inserted with client names, opponents, and hearing dates.
+
+📄 **Screenshot:**  
+`./screenshots/Phase V/casefile_inserts.png`
+
+---
+
+### 🗃️ Insertion: LAWYER_CASE
+Initial case assignments were inserted to test conflict logic.
+
+📄 **Screenshot:**  
+`./screenshots/Phase V/lawyercase_inserts.png`
+
+---
+
+## 🔍 Step 3: Data Integrity Validation
+JOIN queries were executed to confirm:
+
+- ✔ All foreign key relationships are valid  
+- ✔ Lawyers correctly map to their assigned cases  
+- ✔ No orphan records exist  
+- ✔ The system reflects realistic legal scheduling  
+
+Validation Query Screenshot:  
+`./screenshots/Phase V/data_validation.png`
+
+---
+
+### ✅ Validation Results Confirm:
+- All **foreign keys** function correctly  
+- Case-to-lawyer relationships are consistent  
+- Inserted data supports future **conflict checking logic**  
+- The database is ready for **Phase VI PL/SQL development**
+
+---
