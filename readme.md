@@ -359,7 +359,7 @@ The following tables were created in the schema **LAWYERFIRM_DB** using Oracle S
 A table to store lawyer information including specialties.
 
 📄 **Screenshot:**  
-`./screenshots/Phase V/TABLE 1.png`
+`.TABLE 1.png`
 
 ---
 
@@ -402,7 +402,7 @@ Sample court cases were inserted with client names, opponents, and hearing dates
 Initial case assignments were inserted to test conflict logic.
 
 📄 **Screenshot:**  
-`./screenshots/Phase V/lawyercase_inserts.png`
+`screenshots/phaseV/TABLE LAWYER.png`
 
 ---
 
