@@ -360,7 +360,8 @@ The following tables were created in the schema **LAWYERFIRM_DB** using Oracle S
 A table to store lawyer information including specialties.
 
 📄 **Screenshot:**  
-`.TABLE 1.png`
+`.TABLE 1.png`<img width="438" height="417" alt="TABLE LAWYER" src="https://github.com/user-attachments/assets/1433b4ec-029e-4a9d-8ef3-c262c652b724" />
+
 
 ---
 
