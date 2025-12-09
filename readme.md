@@ -216,3 +216,76 @@ flowchart TD
   class D1 decision
   class F1 success
   class E1 error
+
+```
+
+# 🧩 Phase III: Logical Model Design
+
+## 🎯 Objective
+The logical model for the Law Firm Case Conflict Checker system was developed to support automated case assignment and prevent ethical or scheduling conflicts within a law firm. This phase transforms the business requirements from Phase I and the workflow from Phase II into a fully normalized relational database structure. The goal is to design a clean, consistent, and well-constrained logical model that allows efficient PL/SQL validation during case assignments.
+
+---
+
+# 🗃️ Entities & Attributes
+
+## 👨‍⚖️ LAWYER  
+| Attribute   | Type          | Constraint                |
+|-------------|---------------|---------------------------|
+| lawyer_id   | NUMBER        | Primary Key               |
+| name        | VARCHAR2(100) | NOT NULL                  |
+| specialty   | VARCHAR2(100) | NULL                      |
+
+---
+
+## 📁 CASE_FILE  
+| Attribute     | Type           | Constraint                      |
+|---------------|----------------|----------------------------------|
+| case_id       | NUMBER         | Primary Key                      |
+| client_name   | VARCHAR2(100)  | NOT NULL                         |
+| opponent      | VARCHAR2(100)  | NOT NULL                         |
+| hearing_date  | DATE           | NOT NULL                         |
+
+---
+
+## 🔗 LAWYER_CASE (Assignment Table)  
+| Attribute   | Type   | Constraint                                     |
+|-------------|---------|------------------------------------------------|
+| lawyer_id   | NUMBER  | Foreign Key → LAWYER(lawyer_id), part of PK    |
+| case_id     | NUMBER  | Foreign Key → CASE_FILE(case_id), part of PK   |
+
+---
+
+# 🔄 Relationships & Constraints
+
+- **LAWYER → LAWYER_CASE** : One lawyer can be assigned many cases  
+- **CASE_FILE → LAWYER_CASE** : Each case is assigned to one lawyer  
+- **LAWYER_CASE** ensures a controlled, validated linking between lawyers and cases  
+- Foreign keys enforce legal, ethical, and scheduling integrity  
+
+---
+
+# 📐 Normalization (3NF Verification)
+
+### ✔ 1NF – Attributes contain only atomic values  
+### ✔ 2NF – All non-key attributes fully depend on the primary key  
+### ✔ 3NF – No transitive dependencies exist  
+
+This ensures a clean and efficient schema for the conflict checker.
+
+---
+
+# 🖼️ ERD Diagram  
+*Visual Placeholder — Logical ERD*  
+This ERD represents the LAWYER, CASE_FILE, and LAWYER_CASE tables, including primary keys, foreign keys, and relationship types. It forms the foundation for conflict checking in later PL/SQL development.
+
+---
+
+# 🧱 Table Creation Scripts
+
+## 👨‍⚖️ LAWYER Table
+```sql
+CREATE TABLE LAWYER (
+    lawyer_id    NUMBER PRIMARY KEY,
+    name         VARCHAR2(100) NOT NULL,
+    specialty    VARCHAR2(100)
+);
