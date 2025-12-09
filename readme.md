@@ -359,7 +359,7 @@ The following tables were created in the schema **LAWYERFIRM_DB** using Oracle S
 A table to store lawyer information including specialties.
 
 📄 **Screenshot:**  
-`./screenshots/Phase V/lawyer_table.png`
+`./screenshots/Phase V/TABLE 1.png`
 
 ---
 
@@ -367,7 +367,7 @@ A table to store lawyer information including specialties.
 A table that stores details of legal cases, including client, opponent, and hearing date.
 
 📄 **Screenshot:**  
-`./screenshots/Phase V/casefile_table.png`
+`./screenshots/Phase V/![alt text](image.png).png`
 
 ---
 
@@ -375,7 +375,7 @@ A table that stores details of legal cases, including client, opponent, and hear
 A junction table linking lawyers to their assigned cases.
 
 📄 **Screenshot:**  
-`./screenshots/Phase V/lawyercase_table.png`
+`./screenshots/Phase V/![alt text](image-1.png).png`
 
 ---
 
