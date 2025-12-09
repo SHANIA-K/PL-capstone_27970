@@ -289,3 +289,52 @@ CREATE TABLE LAWYER (
     name         VARCHAR2(100) NOT NULL,
     specialty    VARCHAR2(100)
 );
+
+```
+
+# 🏗️ Phase IV: Database Creation and Access Setup (via SQL Developer)
+
+## 🎯 Objective
+To create a dedicated Oracle PL/SQL development environment for the Law Firm Case Conflict Checker system using SQL Developer as the primary database administration tool. This phase ensures that a secure Pluggable Database (PDB), user account, and the required access privileges are configured for all subsequent phases, including table creation, PL/SQL procedure development, and trigger implementation.
+
+---
+
+## 🔐 Task 1: PDB and User Creation (Using SQL Developer)
+The project environment was fully set up inside an Oracle Pluggable Database (PDB) using SQL Developer.  
+SQL Developer provides an easy-to-use administrative interface and works as an alternative to Oracle Enterprise Manager (OEM) while offering full control over PDBs, users, and permissions.
+
+---
+
+## 🧰 Configuration Summary
+| Component          | Value                                            |
+|--------------------|--------------------------------------------------|
+| Tool Used          | SQL Developer (OEM Alternative)                 |
+| PDB Name           | mon_27970_isaro_LawFirm_db                      |
+| User Created       | isaro27970                                       |
+| Password           | isaro                                            |
+| Privileges Granted | Full DBA privileges (development environment)    |
+
+---
+
+## 📸 Screenshot: PDB Creation in SQL Developer
+*PDB Creation Screenshot Placeholder*
+
+---
+
+## 📸 Screenshot: User Creation & Privilege Assignment
+*User & Privileges Screenshot Placeholder*
+
+---
+
+## 🧾 SQL Commands Executed (via SQL*Plus / SQL Developer Worksheet)
+
+```sql
+-- Switch into the project PDB
+ALTER SESSION SET CONTAINER=mon_27970_isaro_LawFirm_db;
+
+-- Create project user
+CREATE USER isaro27970 IDENTIFIED BY isaro;
+
+-- Grant full privileges for development
+GRANT ALL PRIVILEGES TO isaro27970;
+GRANT SYSDBA TO isaro27970;
