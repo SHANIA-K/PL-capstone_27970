@@ -327,7 +327,8 @@ SQL Developer is used as an alternative to OEM, offering full administrative con
 ---
 
 ## 📸 Screenshot: User Creation & Privilege Assignment
-👉 **[pdb.png](PUT_YOUR_USER_PRIVILEGE_SCREENSHOT_LINK_HERE)**
+👉 **[pdb.png](PUT_YOUR_USER_PRIVILEGE_SCREENSHOT_LINK_HERE)**<img width="1216" height="917" alt="pdb " src="https://github.com/user-attachments/assets/bab49e5e-ab6a-4e24-82c2-39958522f1b3" />
+
 
 ---
 
@@ -360,7 +361,8 @@ The following tables were created in the schema **LAWYERFIRM_DB** using Oracle S
 A table to store lawyer information including specialties.
 
 📄 **Screenshot:**  
-`.TABLE 1.png`<img width="438" height="417" alt="TABLE LAWYER" src="https://github.com/user-attachments/assets/1433b4ec-029e-4a9d-8ef3-c262c652b724" />
+`.TABLE 1.png`<img width="437" height="383" alt="image" src="https://github.com/user-attachments/assets/c561ad50-2d21-4088-9808-ca01dbaa95dc" />
+
 
 
 ---
@@ -377,7 +379,8 @@ A table that stores details of legal cases, including client, opponent, and hear
 A junction table linking lawyers to their assigned cases.
 
 📄 **Screenshot:**  
-`./screenshots/Phase V/![alt text](image-1.png).png`
+`./screenshots/Phase V/![alt text](image-1.png).png`<img width="433" height="245" alt="CASE FILE" src="https://github.com/user-attachments/assets/fbe3351e-d712-4b94-9070-d62aecc6069a" />
+
 
 ---
 
@@ -388,7 +391,8 @@ Realistic sample data was inserted into each table to simulate real law firm ope
 Lawyers with various specialties were added.
 
 📄 **Screenshot:**  
-`./screenshots/Phase V/lawyer_inserts.png`
+`./screenshots/Phase V/lawyer_inserts.png`<img width="438" height="417" alt="TABLE LAWYER" src="https://github.com/user-attachments/assets/7b8674d4-afcc-4c25-b1fc-ba431b0a6203" />
+
 
 ---
 
@@ -510,6 +514,9 @@ CREATE TABLE holiday_calendar (
     holiday_date DATE PRIMARY KEY,
     description  VARCHAR2(100)
 );
+<img width="734" height="391" alt="TABLE AUDIT LOG " src="https://github.com/user-attachments/assets/2837b716-0003-476b-b0dd-ad3251b75c51" />
+<img width="412" height="101" alt="TABLE HOLIDAY" src="https://github.com/user-attachments/assets/598cad6b-4f85-4bc5-bbf1-aacc8333694e" />
+
 
 -- Sample holiday entries
 INSERT INTO holiday_calendar VALUES (TO_DATE('2025-01-01','YYYY-MM-DD'), 'New Year Holiday');
