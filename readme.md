@@ -475,3 +475,41 @@ SELECT
     COUNT(c.case_id) OVER (PARTITION BY l.lawyer_id) AS total_cases_assigned
 FROM LAWYER_CASE c
 JOIN LAWYER l ON c.lawyer_id = l.lawyer_id;
+
+```
+## 🧠 Phase VII: Advanced Database Programming and Auditing
+
+### 🎯 Objective
+
+To secure the **Law Firm Case Conflict Checker System** by implementing **trigger-based restrictions**, a **centralized audit system**, and **package-based logging** to ensure real-time monitoring, access control, and accountability for all table-level actions.
+
+---
+
+## 🔍 Problem Statement
+
+Legal case databases are highly sensitive and must be protected against unauthorized changes during business-critical times. This project implements advanced security features such as:
+
+- ❌ Preventing case-assignment changes during weekdays and holidays  
+- 🕵️ Tracking who attempted to change data, when, and on which table  
+- 📦 Centralizing audit logic using PL/SQL packages  
+
+This adds a layer of **governance**, **traceability**, and **control**, essential for Management Information Systems within a law firm environment.
+
+---
+
+## 📅 Holiday Restriction System
+
+### ✅ `holiday_calendar` Table
+
+Used to store blocked dates (official holidays).
+
+```sql
+CREATE TABLE holiday_calendar (
+    holiday_date DATE PRIMARY KEY,
+    description  VARCHAR2(100)
+);
+
+-- Sample holiday entries
+INSERT INTO holiday_calendar VALUES (TO_DATE('2025-01-01','YYYY-MM-DD'), 'New Year Holiday');
+INSERT INTO holiday_calendar VALUES (TO_DATE('2025-07-01','YYYY-MM-DD'), 'Independence Day');
+COMMIT;
